@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    background-color: #343A3F;
+    padding-block: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav ul li:first-child a {
+    color: #FFF;
+    font-size: 1.6rem;
+}
+
+nav ul li a {
+    color: #939598;
+}
+
+body > * {
+    padding-left: 1.5rem;
+}
+
+#login h1 {
+    margin-bottom: 1.2rem;
+}
+
+#login form {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    margin-bottom: 0.4rem;
+}
+
+#login form > input {
+    padding-block: 0.4rem;
+    padding-left: 0.6rem;
+}
+
+#login form > input[type=submit] {
+    align-self: flex-start;
+    padding: 0.6rem 0.8rem;
+    background-color: #017BFE;
+    color: #FFF;
+    border-style: none;
+    border-radius: 0.2rem;
+}
+
+#login hr {
+    max-width: 50%;
+    margin-block: 1rem;
+}
+
+#login > ul {
+    padding-left: 1.2rem;
+}
+
+#login > ul a {
+    text-decoration: none;
+    color: #017BFE;
+}
