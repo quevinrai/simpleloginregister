@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 # Create your views here
 def home(request):
-    return redirect('login')
+    return render(request, 'base/home.html')
 
 def login(request):
     if request.method == "POST":
@@ -17,6 +17,8 @@ def login(request):
             user = User.objects.get(username=username)
         except:
             messages.error(request, 'User does not exist!')
+
+        return redirect('home')
 
     return render(request, 'base/login.html')
 
