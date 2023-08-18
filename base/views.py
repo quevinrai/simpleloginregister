@@ -15,10 +15,9 @@ def login(request):
 
         try:
             user = User.objects.get(username=username)
+            return redirect('home')
         except:
             messages.error(request, 'User does not exist!')
-
-        return redirect('home')
 
     return render(request, 'base/login.html')
 
