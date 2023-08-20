@@ -1,5 +1,9 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <h1>Home</h1>
+    {% if request.user.is_authenticated %}
+        <p>Your username is {{request.user.username}}.</p>
+    {% else %}
+        <h1>Home</h1>
+    {% endif %}
 {% endblock content %}
