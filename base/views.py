@@ -32,6 +32,9 @@ def register_user(request):
     context = {'form': form}
     return render(request, 'base/register.html', context)
 
+def change_password(request):
+    return render(request, 'base/change_password.html')
+
 def logout_user(request):
     logout(request)
     return redirect('home')
