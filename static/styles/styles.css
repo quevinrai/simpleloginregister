@@ -68,7 +68,9 @@ body > * {
 
 #login form > input[type=submit] {
     align-self: flex-start;
-    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.6em 0.8em;
     background-color: #017BFE;
     color: #FFF;
     border-style: none;
@@ -99,12 +101,24 @@ body > * {
 
 #change-password-page form ul {
     margin-left: 2rem;
+    font-size: 0.85rem;
     color: #888;
 }
 
 #change-password-page form input {
     padding-block: 0.6rem;
     padding-left: 0.8rem;
+}
+
+#change-password-page form > input[type=submit] {
+    align-self: flex-start;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.6em 0.8em;
+    background-color: #28A745;
+    color: #FFF;
+    border-style: none;
+    border-radius: 0.2rem;
 }
 
 #displaymessages {
