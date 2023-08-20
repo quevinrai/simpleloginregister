@@ -9,6 +9,8 @@ nav {
     background-color: #343A3F;
     padding-block: 1.5rem;
     margin-bottom: 1.2rem;
+    display: flex;
+    gap: 2em;
 }
 
 nav ul {
@@ -22,7 +24,7 @@ nav a {
     text-decoration: none;
 }
 
-nav ul li:first-child a {
+nav #nav_home {
     color: #FFF;
     font-size: 1.6rem;
 }
