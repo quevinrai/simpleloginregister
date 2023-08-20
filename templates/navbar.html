@@ -1,7 +1,15 @@
 <nav>
-    <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'login' %}">Log in</a></li>
-        <li><a href="{% url 'register' %}">Create an account</a></li>
-    </ul>
+    <a id="nav_home" href="{% url 'home' %}">Home</a>
+
+        <ul>
+            {% if not request.user.is_authenticated %}
+                <li><a href="{% url 'login' %}">Log in</a></li>
+                <li><a href="{% url 'register' %}">Create an account</a></li>
+            {% else %}
+                <li><a href="{% url 'home' %}">Change Password</a></li>
+                <li><a href="{% url 'home' %}">Change profile</a></li>
+                <li><a href="{% url 'home' %}">Change email</a></li>
+                <li><a href="{% url 'home' %}">Log out</a></li>
+            {% endif %}
+        </ul>
 </nav>
