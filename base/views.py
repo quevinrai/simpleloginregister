@@ -14,14 +14,12 @@ def login_user(request):
         password = request.POST.get('password')
         # print(request.POST.get('remember_me'))
 
-        # try:
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
             return redirect('home')
         else:
-        # except:
             messages.error(request, 'User does not exist!')
 
     return render(request, 'base/login.html')
@@ -33,6 +31,13 @@ def register_user(request):
     return render(request, 'base/register.html', context)
 
 def change_password(request):
+    if request.method == "POST":
+        old_password = request.POST.get('old-password')
+        new_password = request.POST.get('new-password')
+        new_password_confirmation = request.POST.get('new-password-confirmation')
+
+        
+
     return render(request, 'base/change_password.html')
 
 def logout_user(request):
