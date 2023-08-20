@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -44,6 +44,8 @@ def change_password(request):
                 user.set_password(new_password)
                 user.save()
                 messages.success(request, 'Password has been updated!')
+
+                update_session_auth_hash(request, user)
                 return redirect('home')
             else:
                 messages.error(request, 'New password doesn\'t match the new password confirmation!')
