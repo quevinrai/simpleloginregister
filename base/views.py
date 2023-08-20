@@ -32,11 +32,23 @@ def register_user(request):
 
 def change_password(request):
     if request.method == "POST":
+        username = request.user.username
         old_password = request.POST.get('old-password')
         new_password = request.POST.get('new-password')
         new_password_confirmation = request.POST.get('new-password-confirmation')
 
-        
+        user = authenticate(request, username=username, password=old_password)
+
+        if user is not None:
+            if new_password == new_password_confirmation:
+                user.set_password(new_password)
+                user.save()
+                messages.success(request, 'Password has been updated!')
+                return redirect('home')
+            else:
+                messages.error(request, 'New password doesn\'t match the new password confirmation!')
+        else:
+            messages.error(request, 'Old password does not match your current password!')
 
     return render(request, 'base/change_password.html')
 
