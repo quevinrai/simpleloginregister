@@ -1,5 +1,11 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <h1>Register</h1>
+    <div id="register-page">
+        <h1>Register</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+        </form>
+    </div>
 {% endblock content %}
