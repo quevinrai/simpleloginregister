@@ -5,6 +5,7 @@
         <h1>Register</h1>
 
         <form action="" method="POST">
+            {%csrf_token%}
             {{form.non_field_errors}}
 
             <div class="fieldWrapper">
