@@ -6,43 +6,47 @@
 
         <form action="" method="POST">
             {%csrf_token%}
+            
             {{form.non_field_errors}}
 
             <div class="fieldWrapper">
                 {{form.username.errors}}
-                <label for="{{form.username.id_for_label}}">Username:</label>
+                <label for="{{form.username.id_for_label}}">Username</label>
                 {{form.username}}
                 {{form.username.help_text}}
             </div>
 
             <div class="fieldWrapper">
                 {{form.first_name.errors}}
-                <label for="{{form.first_name.id_for_label}}">First Name:</label>
+                <label for="{{form.first_name.id_for_label}}">First Name</label>
                 {{form.first_name}}
+                {{form.first_name.help_text}}
             </div>
 
             <div class="fieldWrapper">
                 {{form.last_name.errors}}
-                <label for="{{form.last_name.id_for_label}}">Last Name:</label>
+                <label for="{{form.last_name.id_for_label}}">Last Name</label>
                 {{form.last_name}}
+                {{form.last_name.help_text}}
             </div>
 
             <div class="fieldWrapper">
                 {{form.email.errors}}
-                <label for="{{form.email.id_for_label}}">Email:</label>
+                <label for="{{form.email.id_for_label}}">Email</label>
                 {{form.email}}
+                {{form.email.help_text}}
             </div>
 
             <div class="fieldWrapper">
                 {{form.password1.errors}}
-                <label for="{{form.password1.id_for_label}}">Password:</label>
+                <label for="{{form.password1.id_for_label}}">Password</label>
                 {{form.password1}}
                 {{form.password1.help_text}}
             </div>
 
             <div class="fieldWrapper">
                 {{form.password2.errors}}
-                <label for="{{form.password2.id_for_label}}">Password confirmation:</label>
+                <label for="{{form.password2.id_for_label}}">Password confirmation</label>
                 {{form.password2}}
                 {{form.password2.help_text}}
             </div>
