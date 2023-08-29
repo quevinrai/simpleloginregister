@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div id="change-email-page">
+        <h1>Change Profile</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{form.non_field_errors}}
+
+            <div class="fieldWrapper">
+                {{form.last_name.errors}}
+                <label for="{{form.email.id_for_label}}">Old Email Address</label>
+                {{form.email}}
+            </div>
+
+            <div class="fieldWrapper">
+                <label for="new-email">New Email Address</label>
+                <input type="email" name="new-email" id="new-email">
+            </div>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+{% endblock content %}
