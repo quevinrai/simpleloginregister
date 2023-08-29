@@ -182,3 +182,39 @@ body > * {
     font-size: 0.8rem;
     color: #888;
 }
+
+#change-profile-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 50%;
+    font-weight: 300;
+    padding-bottom: 2rem;
+}
+
+#change-profile-page form label {
+    margin-bottom: 0.4rem;
+    font-weight: 400;
+}
+
+#change-profile-page form input {
+    padding-block: 0.4rem;
+    padding-left: 0.6rem;
+}
+
+#change-profile-page form .fieldWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+#change-profile-page form > input[type=submit] {
+    align-self: flex-start;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.6em 0.8em;
+    background-color: #28A745;
+    color: #FFF;
+    border-style: none;
+    border-radius: 0.2rem;
+}
