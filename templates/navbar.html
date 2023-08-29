@@ -3,13 +3,13 @@
 
         <ul>
             {% if not request.user.is_authenticated %}
-                <li><a href="{% url 'login' %}">Log in</a></li>
-                <li><a href="{% url 'register' %}">Create an account</a></li>
+                <li><a href="{% url 'login' %}">Log In</a></li>
+                <li><a href="{% url 'register' %}">Create an Account</a></li>
             {% else %}
                 <li><a href="{% url 'change-password' %}">Change Password</a></li>
-                <li><a href="{% url 'home' %}">Change profile</a></li>
-                <li><a href="{% url 'home' %}">Change email</a></li>
-                <li><a href="{% url 'logout' %}">Log out</a></li>
+                <li><a href="{% url 'change-profile' %}">Change Profile</a></li>
+                <li><a href="{% url 'home' %}">Change Email</a></li>
+                <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% endif %}
         </ul>
 </nav>
