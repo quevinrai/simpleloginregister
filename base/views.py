@@ -3,6 +3,9 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm, ChangeProfileForm
+from .models import CustomUser
+
+User = CustomUser
 
 # Create your views here
 def home(request):
@@ -62,7 +65,14 @@ def change_password(request):
     return render(request, 'base/change_password.html')
 
 def change_profile(request):
-    form = ChangeProfileForm()
+    user = User.objects.get(username=request.user.username)
+    form = ChangeProfileForm(instance=user)
+
+    if request.method == "POST":
+        form = ChangeProfileForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
 
     context = {'form': form}
     return render(request, 'base/change_profile.html', context)
