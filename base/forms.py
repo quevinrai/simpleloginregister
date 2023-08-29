@@ -11,3 +11,8 @@ class ChangeProfileForm(ModelForm):
     class Meta:
         model = CustomUser
         fields = ['username', 'first_name', 'last_name']
+
+class ChangeEmailForm(ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ['email']
