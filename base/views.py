@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, ChangeProfileForm
 
 # Create your views here
 def home(request):
@@ -60,6 +60,12 @@ def change_password(request):
             messages.error(request, 'Old password does not match your current password!')
 
     return render(request, 'base/change_password.html')
+
+def change_profile(request):
+    form = ChangeProfileForm()
+
+    context = {'form': form}
+    return render(request, 'base/change_profile.html', context)
 
 def logout_user(request):
     logout(request)
